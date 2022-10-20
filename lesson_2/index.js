@@ -13,7 +13,7 @@
    const productCategory = 'Постельные принадлежности';
    const quantityOfGoods = 135;
    const productPrice = 70;
-   console.log (item);
-   console.log (quantity * price);
+   console.log (productName);
+   console.log (quantityOfGoods * productPrice);
 }
 
