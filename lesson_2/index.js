@@ -17,3 +17,5 @@
    console.log (quantityOfGoods * productPrice);
 }
 
+
+
