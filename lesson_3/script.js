@@ -18,19 +18,18 @@
 };
 
 {
-const productName = 'газплита';
-const productCategory = 'техника для кухни';
-const quantityOfGoods = 111;
-const productPrice = 800;
+const productName = prompt('Наименование товара');
+const productCategory = prompt('категория товара');
+const quantityOfGoods= prompt('количество товара');
+const productPrice = prompt('Цена товара');
 
-const productNames = prompt('Наименование товара');
-const productCategorys = prompt('категория товара');
-const quantityOfGoodss = prompt('количество товара');
-const productPrices = prompt('Цена товара');
-console.log(typeof Number(quantityOfGoodss));
-console.log(typeof Number(productPrices));
-console.log('На складе' + quantityOfGoods + 'единиц товара на сумму'  + quantityOfGoods * productPrice 
-+ 'белорусских рублей');
+const quantityOfGoodss = Number(quantityOfGoods);
+const productPrices = Number(productPrice);
+
+console.log (typeof quantityOfGoodss);
+console.log (typeof productPrices);
+console.log(' На складе ' + quantityOfGoodss + productName + ' на сумму ' + quantityOfGoodss * productPrices
++ ' белорусских рублей ');
 };
 
 
