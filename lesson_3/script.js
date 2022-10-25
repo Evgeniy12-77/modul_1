@@ -26,10 +26,14 @@ const productPrice = prompt('Цена товара');
 const quantityOfGoodss = Number(quantityOfGoods);
 const productPrices = Number(productPrice);
 
-console.log (typeof quantityOfGoodss);
-console.log (typeof productPrices);
-console.log(' На складе ' + quantityOfGoodss + productName + ' на сумму ' + quantityOfGoodss * productPrices
-+ ' белорусских рублей ');
+
+if (quantityOfGoodss === Number(quantityOfGoods) && productPrices === Number(productPrice)) { 
+   console.log(' На складе ' + quantityOfGoodss + productName + ' на сумму ' + quantityOfGoodss * productPrices
+   + ' белорусских рублей '); 
+}
+   else { 
+   console.log("Вы ввели некорректные данные");
+   }
 };
 
 
