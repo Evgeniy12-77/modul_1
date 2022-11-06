@@ -12,7 +12,7 @@ const allСashbox = [
 // Используем Екмаскрипт 6
 
   const sumCheckCash = () => {
-    const itogSum = allСashbox.reduce((sum, pair) => sum + pair[1], 0) / allСashbox.reduce((sum, pair) => sum + pair[0], 0);                  
+    const itogSum = allСashbox.reduce((sum, pair) => sum + pair[1], 0) / allСashbox.reduce((sum, pair) => sum + pair[0], 0);   
     // Делим общую сумму товаров на общее кол-во товаров
     console.log(itogSum);
 };
