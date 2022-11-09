@@ -1,15 +1,15 @@
+'use strict'
 
-
-const fooR = (length, n, m) => {
-   const newArrr = [];
-   arrLengts = length;
-   const minNum = n;
-   const maxNum = m;
-   for (let i = 1; i > 0, i < arrLengts; i++) {
-   const newNewArr = Math.floor(Math.random() * (m - n) + n);
-   newArrr.push(newNewArr);
-} return newArrr;
+const randomNumber = (length, n, m) => {
+   const newRandom = [];
+   const minNumber = n;
+   const maxNumber = m;
+   const arrLengts = length;
+   for (let i = 1; i >= 0; i < arrLengts, i++) {
+   const newNewArr_1 = Math.round(Math.random() * (m - n) + n);
+   newRandom.push(newNewArr_1);
+} return newRandom;
 };
-console.log(fooR(10, -1000, 10000));
+console.log(randomNumber(10, -1000, 10000));
 
 
