@@ -6,6 +6,5 @@ const getAverageValue = () => {
    const sumCheck = (check.reduce((sum, current) => sum + current)) / check.length;
    console.log(sumCheck);
 };
-
 getAverageValue();
 

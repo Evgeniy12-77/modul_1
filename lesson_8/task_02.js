@@ -6,7 +6,7 @@ const randomNumber = (length, n, m) => {
    const maxNumber = m;
    const arrLengts = length;
    for (let i = 1; i >= 0; i < arrLengts, i++) {
-   const newNewArr_1 = Math.round(Math.random() * (m - n) + n);
+   const newNewArr_1 = Math.round(Math.random() * (maxNumber - minNumber) + minNumber);
    newRandom.push(newNewArr_1);
 } return newRandom;
 };
