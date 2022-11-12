@@ -1,15 +1,13 @@
+
+
+
+
 'use strict'
-
-const randomNumber = (length, n, m) => {
-   const newRandom = [];
-   const minNumber = n;
-   const maxNumber = m;
-   const arrLengts = length;
-   for (let i = 1; i >= 0; i < arrLengts, i++) {
-   const newNewArr_1 = Math.round(Math.random() * (maxNumber - minNumber) + minNumber);
-   newRandom.push(newNewArr_1);
-} return newRandom;
-};
-console.log(randomNumber(10, -1000, 10000));
+const randomNumber = (a, n, m) => Array.from({ length: a }, () => 
+Math.round(Math.random() * (Math.max(n, m) - Math.min(n, m) + 1)) );
+console.log(randomNumber(6, -3, 4));
 
 
+//const createArray = (s, n, m) => 
+//Array+ Math.min(n, m).from({ length: s }, () => Math.floor(Math.random() * (Math.max(n, m) - Math.min(n, m) + 1))
+//+ Math.min(n, m));

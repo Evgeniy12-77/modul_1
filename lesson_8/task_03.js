@@ -1,27 +1,19 @@
 
 
-const getNumbersByParity = (array, str) => {
-   const changeNum = str;
 
-   const numberFilter = array.filter((num) => {
-      if (changeNum === 'even') {
+const fooR1 = (e, n, m, str) => Array
+.from ({ length: e }, () => 
+    Math.floor(Math.random() *  (Math.max(n, m) - Math.min(n, m) + 1) + Math.min(n, m)))
+.filter (num => {
+      if (str === 'even') {
       return num % 2 === 0;
-   } else if (changeNum === 'odd') {
+   } else if (str === 'odd') {
       return !(num % 2 === 0);
    }
-});
-return numberFilter;
-} 
-   
-const fooR = (length, n, m, str) => {
-   const newArrr = [];
-   const arrLengts = length;
-   const minNum = n;
-   const maxNum = m;
-   const changeNum = str;
-   for (let i = 0; i < arrLengts; i++) {
-   const newNewArr = Math.round(Math.random() * (maxNum - minNum) + minNum);
-   newArrr.push(newNewArr);
-} return getNumbersByParity(newArrr, changeNum);
-};
-console.log(fooR(12, -1000, 10000, 'odd'));
+}
+)
+
+console.log(fooR1(5, -10, 10, 'odd'));
+
+
+
