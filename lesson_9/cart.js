@@ -1,9 +1,9 @@
 'use strict'
- let items = [];
+
 const cart = {
-   items,
-   totalPrice: 0,
-   count: 0,
+  items: [],
+  totalPrice: 0,
+  count: 0,
 
   add(el, cost, amount) {
     this.items.push({ product: el, price: cost, amount: amount, });
@@ -39,7 +39,7 @@ const cart = {
     },
 
     print() {
-      const cartStr = JSON.stringify(items);
+      const cartStr = JSON.stringify(cart.items);
       const cartObj = JSON.parse(cartStr);
       console.log(cartObj);
       this.getTotalPrice()

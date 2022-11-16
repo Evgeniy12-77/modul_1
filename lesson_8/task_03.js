@@ -10,10 +10,8 @@ const fooR1 = (e, n, m, str) => Array
    } else if (str === 'odd') {
       return !(num % 2 === 0);
    }
-}
-)
-
-console.log(fooR1(5, -10, 10, 'odd'));
+});
+console.log(fooR1(1, -10, 10, 'odd'));
 
 
 
