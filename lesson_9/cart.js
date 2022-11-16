@@ -1,7 +1,7 @@
 'use strict'
-
+ let items = [];
 const cart = {
-   items: [],
+   items,
    totalPrice: 0,
    count: 0,
 
@@ -23,7 +23,7 @@ const cart = {
     // вернуть общую сумму с функции add
 
     getTotalPrice() { 
-      console.log(`'Общая стоимость корзины товаров составляет:' ${this.total.Price}`);
+      console.log(`'Общая стоимость корзины товаров составляет:' ${this.totalPrice}`);
     },
     
     increaseCount(amount) {
