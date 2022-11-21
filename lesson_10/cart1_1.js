@@ -44,14 +44,24 @@ const cart = {
       const cartObj = JSON.parse(cartStr);
       console.log(cartObj);
       this.getTotalPrice()
-    },    
-    
+    },       
     // Вывести данные в формате JSON
 };
 
+Object.defineProperty(cart, 'totalPrice', {
+  get() { 
+    return this.calculateItemPrice();
+  },
+  set(cost) {
+    if (cost  === 'string')
+  console.log('Введите пожалуйста число');
+  },
+  }
+  );
 cart.add('мобильный телефон', 5000, 1);
 cart.add('чехол', 500, 1);
 cart.add('защитное стекло ', 500, 1);
-
 console.log(cart);
 cart.print();
+
+
