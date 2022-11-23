@@ -24448,4 +24448,7 @@ const listIPv4 = [
 
 
 
-console.log(listIPv4.length);
+
+
+
+console.log([...new Set(listIPv4)]);
