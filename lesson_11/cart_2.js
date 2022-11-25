@@ -4,7 +4,15 @@ const cart = {
   items: [],
   totalPrice: 0,
   count: 0,
-
+  
+  get() {
+    return this.calculateItemPrice();
+  },
+  set(cost) {
+    if (cost === 'string') {
+      console.log('Введите пожалуйста число');
+    }
+  },
   add(el, cost, amount) {
     this.items.push({product: el, price: cost, amount});
     this.calculateItemPrice();
@@ -48,14 +56,7 @@ const cart = {
     this.getTotalPrice();
   },
   // Вывести данные в формате JSON
-  get() {
-    return this.calculateItemPrice();
-  },
-  set(cost) {
-    if (cost === 'string') {
-      console.log('Введите пожалуйста число');
-    }
-  },
+  
 };
 cart.add('мобильный телефон', 5000, 1);
 cart.add('чехол', 500, 1);
