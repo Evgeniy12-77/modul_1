@@ -18,6 +18,6 @@ console.log(visokosGod(2000, 2024));*/
 // Пока что мало понятную
 const getLeapYears = (start, end) => Array
 .from({ length: end - start + 1 }, (n, i) => start + i)
-.filter(n => (n % 4 === 0));
-console.log(getLeapYears(1888, 2099));
+.filter(n => (n <= 10));
+console.log(getLeapYears(1, 15));
 
