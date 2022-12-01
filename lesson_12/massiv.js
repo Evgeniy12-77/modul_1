@@ -1,6 +1,4 @@
 'use strict'
-
-
 let r = [];
 function func4() {
 	let b = Math.floor(Math.random() * 10);
