@@ -8,10 +8,10 @@ const cart = {
 
 set setDiscount (promo) {
   if (promo === 'METHED') {
-    this.discount = this.totalPrice * 15 / 100;
+    this.discount = 15 / 100;
     }
   if (promo === "NEWYEAR") {
-    this.discount = this.totalPrice * 21 / 100; // здесь вывожу discount а  не totalPrice
+    this.discount = 21 / 100; // здесь вывожу discount а  не totalPrice
   }
 },
   set(cost) {
