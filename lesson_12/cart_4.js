@@ -4,40 +4,45 @@ const cart = {
   items: [],
   totalPrice: 0,
   count: 0,
+  discount: 0,
 
-set discount (promo) {
-  if (promo === "METHED") {
-      this.totalPrice = this.totalPrice - (this.totalPrice * 0.15)
-        }
+set setDiscount (promo) {
+  if (promo === 'METHED') {
+    this.discount = this.totalPrice * 15 / 100;
+    }
   if (promo === "NEWYEAR") {
-      this.totalPrice = this.totalPrice - (this.totalPrice * 0.21)
+    this.discount = this.totalPrice * 21 / 100; // здесь вывожу discount а  не totalPrice
   }
 },
-  get() {
-    return this.calculateItemPrice();
-  },
   set(cost) {
     if (cost === 'string') {
       console.log('Введите пожалуйста число');
     }
   },
-  add(el, cost, amount, discount ) {
-    this.items.push({product: el, price: cost, amount});
+  add(el, cost, amount,) {
+    this.items.push({product: el, price: cost, amount,});
     this.calculateItemPrice();
     this.increaseCount(amount);
     console.log(this.add);
   },
+  
   calculateItemPrice() {
     let sum = 0;
     for (let i = 0; i < this.items.length; i++) {
       const elSum = this.items[i].price * this.items[i].amount;
       sum += elSum;
     }
-    this.totalPrice = sum;
+    this.totalPrice = sum - this.discount; // применение скидки
     return this.totalPrice;
   },
-  // вернуть общую сумму с функции add
-
+  set () { 
+    this.totalPrice = this.calculateItemPrice();
+  },
+    get() {
+      return this.calculateItemPrice();
+    },
+  
+  // вернуть общую сумму с функции add\
   getTotalPrice() {
     console.log(`'Общая стоимость корзины товаров составляет:
     ' ${this.totalPrice}`);
@@ -63,10 +68,9 @@ set discount (promo) {
   },
 }
   // Вывести данные в формате JSON
-
-cart.add('мобильный телефон', 5000, 1);
-cart.add('чехол', 500, 1);
-cart.add('защитное стекло ', 500, 1);
+cart.add('мобильный телефон', 5000, 1,);
+cart.add('чехол', 500, 1,);
+cart.add('защитное стекло ', 500, 1,);
 console.log(cart);
 cart.print();
 
