@@ -6,51 +6,27 @@ const cart = {
   count: 0,
   discount: 0,
 
-set setDiscount (promo) {
-  if (promo === 'METHED') {
-    this.discount = 15;
-    }
-  if (promo === "NEWYEAR") {
-    this.discount = 21; // здесь вывожу discount а  не totalPrice
-  }
-},
-  set(cost) {
-    if (cost === 'string') {
-      console.log('Введите пожалуйста число');
-    }
+  get totalPrice() {
+  return this.calculateItemPrice()
   },
+
   add(el, cost, amount,) {
-    this.items.push({product: el, price: cost, amount,});
+    this.items.push({product: el, price: cost, amount});
     this.calculateItemPrice();
     this.increaseCount(amount);
-    console.log(this.add);
   },
-  
+
   calculateItemPrice() {
     let sum = 0;
     for (let i = 0; i < this.items.length; i++) {
       const elSum = this.items[i].price * this.items[i].amount;
       sum += elSum;
-    }
-    this.totalPrice = sum - (sum * this.discount / 100); // применение скидки
-    return this.totalPrice;
-  },
-  set () { 
-    this.totalPrice = this.calculateItemPrice();
-  },
-    get() {
-      return this.calculateItemPrice();
-    },
-  
-  // вернуть общую сумму с функции add\
-  getTotalPrice() {
-    console.log(`'Общая стоимость корзины товаров составляет:
-    ' ${this.totalPrice}`);
+    }  
+    return Math.round(sum - (sum * this.discount / 100)); // применение скидки
   },
 
   increaseCount(amount) {
-    cart.count += amount;
-    // Инкрементированную функцию и добавить этот инкримент в свойство count: 0,
+    this.count += amount;
   },
 
   clear() {
@@ -60,18 +36,29 @@ set setDiscount (promo) {
     // Здесь функция должна обнулить верхние свойства
     // items: [], totalPrice: 0, count: 0,
   },
+
   print() {
     const cartStr = JSON.stringify(cart.items);
     const cartObj = JSON.parse(cartStr);
     console.log(cartObj);
-    this.getTotalPrice();
+    console.log(`'Общая стоимость товаров составляет': ${this.totalPrice}`);
+  },  
+  get setDiscount() {
+    return this.discount();
   },
+
+set setDiscount (promo) {
+  if (promo === 'METHED') {
+    this.discount = 15;
+    }
+  if (promo === 'NEWYEAR') {
+    this.discount = 21; // здесь вывожу discount а  не totalPrice
+  }
+},
 }
-  // Вывести данные в формате JSON
-cart.add('мобильный телефон', 5000, 1,);
+cart.add('мобильный телефон', 10000, 1,);
 cart.add('чехол', 500, 1,);
 cart.add('защитное стекло ', 500, 1,);
+cart.setDiscount = 'METHED';
 console.log(cart);
 cart.print();
-
-
