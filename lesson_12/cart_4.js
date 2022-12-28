@@ -15,7 +15,6 @@ const cart = {
     this.calculateItemPrice();
     this.increaseCount(amount);
   },
-
   calculateItemPrice() {
     let sum = 0;
     for (let i = 0; i < this.items.length; i++) {
