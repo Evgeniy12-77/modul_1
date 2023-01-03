@@ -3,6 +3,16 @@
 
 const gameRus = ['камень', 'ножницы', 'бумага'];
 
+function getUserChoise () {
+   let userChoise = prompt('Камень, ножницы, бумага?');
+   if (userChoise === null) {
+      return userChoise;
+   }
+   return parseInt(userChoise);
+   };
+getUserChoise();
+
+
 function getRandomIntInclusive(min, max) {
    min = Math.ceil(0);
    max = Math.floor(2);
@@ -18,41 +28,17 @@ const game = () => {
    player: 0,
    computer: 0,
    };
-
-result.computer = num;
-const play = result.player = prompt('камень, ножницы, бумага?');
-
+   
 return function start() {
-if(num === 'камень' && play === 'камень') {
-   alert('Ничья');
-}
-if(num === 'камень' && play === 'ножницы') {
-   alert('Вы проиграли');
-}
-if(num === 'камень' && play === 'бумага') {
-   alert('Вы выиграли');
-}
-if(num === 'ножницы' && play === 'камень') {
-   alert('Вы выиграли');
-}
-if(num === 'ножницы' && play === 'бумага') {
-   alert('Вы проиграли');
-}
-if(num === 'ножницы' && play === 'ножницы') {
-   alert('Ничья');
-}
-if(num === 'бумага' && play === 'камень') {
-   alert('Вы проиграли');
-}
-if(num === 'бумага' && play === 'ножницы') {
-   alert('Вы выиграли');
-}
-if(num === 'бумага' && play === 'бумага') {
-   alert('Ничья');
-}
+if ((play === 0 && comp === 1) 
+|| (play === 1 && comp === 2 )
+|| (play === 2 && comp === 2)) {
+   alert ('Вы выйграли!');
+}  else {
+   alert ('Вы проиграли!');
+} } 
 };
-};
-window.GMA() = game;
+window.DSI() = game;
 });
 
 

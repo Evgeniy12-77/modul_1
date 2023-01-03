@@ -1,3 +1,4 @@
 'use strict';
 
-const startGame = window.GMA();
+const startGame = window.DSI();
+startGame();
