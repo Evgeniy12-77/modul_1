@@ -24,8 +24,10 @@ const prog_1 = () => {
    } else {
    return getRandomIntInclusive(0,2); 
    }   
+   
    prog_1();
 };
+   prog_1();
    prog_1();
 
 /*
