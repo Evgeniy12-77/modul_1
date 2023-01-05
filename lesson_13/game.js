@@ -7,13 +7,54 @@ function getRandomIntInclusive(min, max) {
    max = Math.floor(2);
    return Math.floor(Math.random() * (max - min + 1) + min)
 };
+
 getRandomIntInclusive(0,2)
 const num = getRandomIntInclusive(0, 2);
-
 const num_1 = gameRus[num];
+console.log(num);
+console.log(gameRus.indexOf('ножницы'))
 
-console.log(num_1);
+const ansver = () => {
+   let ansver_1 = prompt('камень, ножницы, бумага?');
+   if (ansver_1 === 'камень') {
+      ansver_1 = gameRus.indexOf('камень');
+      console.log(ansver_1);
+   }
+   if (ansver_1 === 'ножницы') {
+      ansver_1 = gameRus.indexOf('ножницы');
+      console.log(ansver_1);
+   }
+   if (ansver_1 === 'бумага') {
+      ansver_1 = gameRus.indexOf('бумага');
+      console.log(ansver_1);
+   };
 
+   const game_9 = () => {
+      if (num === ansver_1) {
+         alert('Ничья');
+      }
+      if (num < ansver_1) {
+         alert ('Вы проиграли');
+      }
+      if (num > ansver_1) {
+         alert ('Вы выиграли');
+      }
+   };
+   game_9();
+};
+ansver();
+
+//
+
+//console.log(num_1);
+
+
+/*
+
+const result = {
+   player: 0,
+   computer: 0,
+}
 const run = () => {
    let input = prompt('камень, ножницы, бумага?');
    if ((num_1 === 'камень' && input === 'камень')
@@ -27,11 +68,16 @@ const run = () => {
    || (num_1 === 'ножницы' && input === 'бумага')) {
    alert('Вы проиграли');
    } else {
-      'Вы ввели неверные данные';
-   }
+      alert('Вы ввели неверные данные');
+   };
+   input = gameRus.indexOf();
    run();
 };
 run();
+result.player = input;
+result.computer = num;
+console.log(result);
+
 
 
 
