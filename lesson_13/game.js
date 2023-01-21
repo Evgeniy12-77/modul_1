@@ -7,7 +7,6 @@ function getRandomIntInclusive(min, max) {
    max = Math.floor(2);
    return Math.floor(Math.random() * (max - min + 1) + min)
 };
-
 getRandomIntInclusive(0,2)
 const num = getRandomIntInclusive(0, 2);
 const num_1 = gameRus[num];
@@ -28,7 +27,7 @@ const ansver = () => {
       ansver_1 = gameRus.indexOf('бумага');
       console.log(ansver_1);
    };
-
+   
    const game_9 = () => {
       if (num === ansver_1) {
          alert('Ничья');
@@ -39,8 +38,10 @@ const ansver = () => {
       if (num > ansver_1) {
          alert ('Вы выиграли');
       }
+      if (confirm('Продолжить игру?')) { }
    };
    game_9();
+   ansver();
 };
 ansver();
 
