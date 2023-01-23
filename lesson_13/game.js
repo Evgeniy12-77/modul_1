@@ -1,5 +1,7 @@
 'use strict';
 
+window.start = (() => {
+
 const gameRus = ['камень', 'ножницы', 'бумага'];
 
 function getRandomIntInclusive(min, max) {
@@ -44,6 +46,8 @@ const ansver = () => {
    ansver();
 };
 ansver();
+});
+
 
 //
 

@@ -13,8 +13,7 @@ window.start = (() => {
    gameRus[num];
 
    const result = {
-   user: 0,
-   bot: 0,
+   
    userInc: 0,
    botInc: 0,
    language: {
