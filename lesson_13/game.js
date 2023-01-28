@@ -4,13 +4,13 @@ window.start = (() => {
 
 const gameRus = ['камень', 'ножницы', 'бумага'];
 
-function getRandomIntInclusive(min, max) {
+function getRandomIntInclusive_1(min, max) {
    min = Math.ceil(0);
    max = Math.floor(2);
    return Math.floor(Math.random() * (max - min + 1) + min)
 };
-getRandomIntInclusive(0,2)
-const num = getRandomIntInclusive(0, 2);
+getRandomIntInclusive_1(0,2)
+const num = getRandomIntInclusive_1(0, 2);
 const num_1 = gameRus[num];
 console.log(num);
 console.log(gameRus.indexOf('ножницы'))
@@ -36,11 +36,12 @@ const ansver = () => {
       }
       if (num < ansver_1) {
          alert ('Вы проиграли');
+         return play_3();
       }
       if (num > ansver_1) {
          alert ('Вы выиграли');
+         return play_1();
       }
-      if (confirm('Продолжить игру?')) { }
    };
    game_9();
    ansver();
