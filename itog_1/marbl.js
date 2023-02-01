@@ -1,11 +1,12 @@
 'use strict'
 
-const sharp = {
-player_1: 5,
-bot_1: 5,
-};
 
 const gameRus = ['камень', 'ножницы', 'бумага'];
+
+const sharp = {
+  player_1: 5,
+  bot_1: 5,
+  };
 
 const ansver = () => {
   function getRandomIntInclusive_1(min, max) {
@@ -13,6 +14,7 @@ const ansver = () => {
     max = Math.floor(2);
      return Math.floor(Math.random() * (max - min + 1) + min)
   };
+
   getRandomIntInclusive_1(0,2)
   const num = getRandomIntInclusive_1(0, 2);
   const num_1 = gameRus[num];
@@ -20,44 +22,52 @@ const ansver = () => {
   console.log(gameRus.indexOf('ножницы'))
 
   let ansver_1 = prompt('камень, ножницы, бумага?');
+
   if (ansver_1 === 'камень') {
       ansver_1 = gameRus.indexOf('камень');
       console.log(ansver_1);
   }
-  if (ansver_1 === 'ножницы') {
+  else if (ansver_1 === 'ножницы') {
       ansver_1 = gameRus.indexOf('ножницы');
       console.log(ansver_1);
   }
-  if (ansver_1 === 'бумага') {
+  else if (ansver_1 === 'бумага') {
       ansver_1 = gameRus.indexOf('бумага');
       console.log(ansver_1);
-  };
+  }
+  else {
+    return ansver();
+  }
   
   const game_9 = () => {
       if (num === ansver_1) {
         alert('Ничья');
-      }
+        return ansver();
+        }        
       if (num < ansver_1) {
-        alert ('Вы проиграли')
+        alert ('Вы проиграли');
         return play_3();
-      }
+        }        
       if (num > ansver_1) {
-      alert ('Вы выиграли')
+      alert ('Вы выиграли');
       return play_1();
-      }
+        }
   };
+
   game_9();
-  ansver();
-};
+}
 
 const play_1 = () => {
-  let user = Number(prompt('Загадайте количество шариков'));
-  if(user <= 0 && user >= 10 && user != Number) {
+  
+  let user = sharp.player_1;
+  user > 0 || user <= 10 || user != 0;
+  user = Number(prompt('Загадайте количество шариков от ' + 1 + ' до ' + user));
+  alert(`Ваше количество шариков ${user}`)
+  
+  if(user < 1 || user > 10 || user === 0 || isNaN(user === true)) {
     alert('Вы ввели некорректные данные, загадайте нужное количество шариков');
     return play_1();
-  }
-  
-  alert ('Ваше количество шариков ' + user);
+  };
 
   console.log(user);
 
@@ -77,80 +87,83 @@ const play_1 = () => {
   }
   console.log(bot_77);
 
-  function play_2() {
     let a = 'Бот угадал';
     let c = 'Бот не угадал';
 
   if ((bot_77 === 1 && user % 2 != 0) ||
   bot_77 === 2 && user % 2 === 0) {
     sharp.player_1 = sharp.player_1 - user,
-    sharp.bot_1 = sharp.bot_1 + user, alert (a),
-    console.log(sharp);
+    sharp.bot_1 = sharp.bot_1 + user, 
+    alert (a),
+    alert('У вас осталось ' + sharp.player_1 + ' шариков, ' + 'у бота - ' + sharp.bot_1);
+    if (sharp.player_1 <= 0 && sharp.bot_1 >= 10) {
+    alert('У вас не осталось шариков, вы проиграли боту');
+    sharp.bot_1 = 5;
+    sharp.player_1 = 5;
+    return play_1();   
+    }
   }
   if ((bot_77 === 1 && user % 2 === 0) || 
   (bot_77 === 2 && user % 2 != 0)) {
     sharp.player_1 = sharp.player_1 + user, 
       sharp.bot_1 = sharp.bot_1 - user, alert(c),
-      console.log(sharp);
-  } 
-  return proverka();
+      alert('У вас осталось ' + sharp.player_1 + ' шариков, ' + 'у бота - ' + sharp.bot_1);
+        if (sharp.bot_1 <= 0 && sharp.player_1 >= 10) {
+          alert('У бота не осталось шариков, вы выиграли');
+          sharp.bot_1 = 5;
+          sharp.player_1 = 5;
+          return play_1();   
+        }
+  }
+  play_3();
+  play_1();
 };
-play_2();
-play_3();
-};
-
 
 function play_3() {
 
-  function getRandomIntInclusives(min, max) { 
+let b = sharp.bot_1;
+b != 0, b <= 10, b >= 0;
+function getRandomIntInclusive(min, max) { 
   min = Math.ceil(1);
-  max = Math.floor(sharp.bot_1);
+  max = Math.floor(b);
   return Math.floor(Math.random() * (max - min + 1) + min) 
 };
-const bot_12 = getRandomIntInclusives(1, sharp.bot_1);
-console.log(bot_12);
+const bot_12 = getRandomIntInclusive(1, b);
+console.log(b);
 
 let ch = 'четное';
 let nech = 'нечетное';
 let player_12 = prompt('Какое число загадал бот? ' + ch + ' или ' + nech);
+if (ch != 'четное' || nech != 'нечетное') {
+  alert('Введите корректное значение')
+  return play_3();
+}
 if ((player_12 === ch && bot_12 % 2 === 0) || 
 (player_12 === nech && bot_12 % 2 != 0))  {
   sharp.player_1 = sharp.player_1 + bot_12, 
-  sharp.bot_1 = sharp.bot_1 - bot_12, alert('Вы угадали');
+  sharp.bot_1 = sharp.bot_1 - bot_12, alert('Вы угадали, бот загадал ' + bot_12),
+  alert('У вас осталось ' + sharp.player_1 + ' шариков, ' + 'у бота - ' + sharp.bot_1);
+  if (sharp.player_1 >= 10 && sharp.bot_1 <= 0) {
+    alert('У бота не осталось шариков, вы выиграли');
+    sharp.player_1 = 5;
+    sharp.bot_1 = 5;
+  }
 }
 if ((player_12 === ch && bot_12 % 2 != 0) ||
 (player_12 === nech && bot_12 % 2 === 0)) {
   sharp.player_1 = sharp.player_1 - bot_12,
   sharp.bot_1 = sharp.bot_1 + bot_12,
-  alert('Вы не угадали');
+  alert('Вы не угадали, бот загадал ' + bot_12),
+  alert('У вас осталось ' + sharp.player_1 + ' шариков, ' + 'у бота - ' + sharp.bot_1);
+  if (sharp.player_1 <= 0 && sharp.bot_1 >= 10) {
+    alert('У вас не осталось шариков, вы проиграли');
+    sharp.bot_1 = 5;
+    sharp.player_1 = 5;
+    return play_1();
+  }
 }
-alert('Бот загадал ' + bot_12);
-return proverka();
+play_1();
+play_3();
 };
-
-
 ansver();
 
-
-//play_1();
-play_1();
-
-function proverka () {
-  let k = sharp.player_1;
-  let l = sharp.bot_1;
-  if (k <= 0 && l >= 10) {
-    alert('Игра завершена, вы проиграли');
-  if (confirm(`Начать заново игру?`)) {
-    } else { 
-      return ansver();
-    }
-  } 
-  else if (k >= 10 && l <= 0) {
-    alert('Игра завершена, вы выиграли');
-    if (confirm(`Начать заново игру?`)) {
-    } else { 
-      return ansver();
-  } }
-    else { return play_1();
-  }
-};
