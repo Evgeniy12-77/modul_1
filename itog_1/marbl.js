@@ -61,10 +61,11 @@ const play_1 = () => {
   
   let user = sharp.player_1;
   user > 0 || user <= 10 || user != 0;
+  alert('Ваше количество шариков ' + user + ' , у бота количество шариков ' + sharp.bot_1)
   user = Number(prompt('Загадайте количество шариков от ' + 1 + ' до ' + user));
   alert(`Ваше количество шариков ${user}`)
   
-  if(user < 1 || user > 10 || user === 0 || isNaN(user === true)) {
+  if(user < 1 || user > sharp.player_1 || user === 0 || user === NaN) {
     alert('Вы ввели некорректные данные, загадайте нужное количество шариков');
     return play_1();
   };
