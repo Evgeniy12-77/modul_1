@@ -1,4 +1,5 @@
 'use strict'
+
 window.marbl = (() => {
 
 const gameRus = ['камень', 'ножницы', 'бумага'];
@@ -7,10 +8,6 @@ const sharp = {
   player_1: 5,
   bot_1: 5,
   };
-
-
-
-
 
 const ansver = () => {
   function getRandomIntInclusive_1(min, max) {
@@ -149,6 +146,7 @@ console.log(b);
 
 let ch = 'четное';
 let nech = 'нечетное';
+alert('Ваше количество шариков ' + user + ' , у бота количество шариков ' + sharp.bot_1);
 let player_12 = prompt('Какое число загадал бот? ' + ch + ' или ' + nech);
 if (ch != 'четное' || nech != 'нечетное') {
   alert('Введите корректное значение')
