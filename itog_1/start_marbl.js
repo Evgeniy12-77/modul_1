@@ -1,5 +1,5 @@
 'use strict'
 
-const startGame = window.start.ansver();
+const game_Marbl = window.marbl.ansver();
 
 
