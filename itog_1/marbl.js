@@ -4,10 +4,7 @@ window.marbl = (() => {
 
 const gameRus = ['камень', 'ножницы', 'бумага'];
 
-const sharp = {
-  player_1: 5,
-  bot_1: 5,
-  };
+
 
 const ansver = () => {
 
@@ -62,14 +59,18 @@ const ansver = () => {
 let user;
 
 const player_Marbl = () => {
-  alert('Ваше количество шариков ' + sharp.player_1 + ' , у бота количество шариков ' + sharp.bot_1)
+  if(sharp.player_1 <= 0 || sharp.bot_1 <= 0) {
+    sharp.player_1 = 5;
+    sharp.bot_1 = 5;
+  alert('Ваше количество шариков ' + sharp.player_1 + ' , у бота количество шариков ' + sharp.bot_1);
+  }
   if(user > 0 || user <= 10 || user != 0) {
-  user = Number(prompt('Загадайте количество шариков от ' + 1 + ' до ' + sharp.player_1)) 
+  user = Number(prompt('Загадайте количество шариков от ' + 1 + ' до ' + sharp.player_1));
   user === sharp.player_1; 
   alert(`Ваше количество шариков ${user}`);
   }
 
-  if(user < 1 || user > sharp.player_1 || user === 0 || user === NaN) {
+  if(user < 1 || user > sharp.player_1 || user === 0 || isNaN(user)) {
     alert('Вы ввели некорректные данные, загадайте нужное количество шариков');
     return player_Marbl();
   };
@@ -104,12 +105,8 @@ const player_Marbl = () => {
     if (sharp.player_1 <= 0 && sharp.bot_1 >= 10) {
     alert('У вас не осталось шариков, вы проиграли боту')
     if (confirm(`Начать заново игру?`)) {
-      sharp.bot_1 = 5;
-      sharp.player_1 = 5;
       return ansver(); } 
       else { 
-        sharp.bot_1 = 5;
-        sharp.player_1 = 5;
       return;
     }
     }
@@ -122,12 +119,8 @@ const player_Marbl = () => {
         if (sharp.bot_1 <= 0 && sharp.player_1 >= 10) {
           alert('У бота не осталось шариков, вы выиграли')
           if (confirm(`Начать заново игру?`)) {
-            sharp.bot_1 = 5;
-            sharp.player_1 = 5;
             return ansver(); } 
             else { 
-              sharp.bot_1 = 5;
-              sharp.player_1 = 5;
             return;
           }  
         }
@@ -135,9 +128,10 @@ const player_Marbl = () => {
   bot_Marbl();
 };
 
-function bot_Marbl() {
+let b;
 
-let b = sharp.bot_1;
+function bot_Marbl() {
+b = sharp.bot_1;
 b != 0, b <= 10, b >= 0;
 function getRandomIntInclusive(min, max) { 
   min = Math.ceil(1);
@@ -152,8 +146,8 @@ let nech = 'нечетное';
 alert('Ваше количество шариков ' + sharp.player_1 + ' , у бота количество шариков ' + sharp.bot_1);
 let player_12 = prompt('Какое число загадал бот? ' + ch + ' или ' + nech);
 if (ch != 'четное' || nech != 'нечетное') {
-  alert('Введите корректное значение')
-  return bot_Marbl();
+  alert('Введите корректное значение');
+  return;
 }
 if ((player_12 === ch && bot_12 % 2 === 0) || 
 (player_12 === nech && bot_12 % 2 != 0))  {
@@ -163,12 +157,8 @@ if ((player_12 === ch && bot_12 % 2 === 0) ||
   if (sharp.player_1 >= 10 && sharp.bot_1 <= 0) {
     alert('У бота не осталось шариков, вы выиграли')
     if (confirm(`Начать заново игру?`)) {
-      sharp.bot_1 = 5;
-      sharp.player_1 = 5;
       return ansver(); } 
       else { 
-      sharp.bot_1 = 5;
-      sharp.player_1 = 5;
       return;
     }
   }
@@ -182,12 +172,8 @@ if ((player_12 === ch && bot_12 % 2 != 0) ||
   if (sharp.player_1 <= 0 && sharp.bot_1 >= 10) {
     alert('У вас не осталось шариков, вы проиграли') 
     if (confirm(`Начать заново игру?`)) {
-      sharp.bot_1 = 5;
-      sharp.player_1 = 5;
       return ansver(); } 
       else { 
-      sharp.bot_1 = 5;
-      sharp.player_1 = 5;
       return;
     } 
   }
