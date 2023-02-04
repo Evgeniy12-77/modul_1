@@ -10,6 +10,7 @@ const sharp = {
   };
 
 const ansver = () => {
+
   function getRandomIntInclusive_1(min, max) {
     min = Math.ceil(0);
     max = Math.floor(2);
@@ -55,16 +56,19 @@ const ansver = () => {
         }
   };
   game_Rps();
-}
+
+};
+
+let user;
 
 const player_Marbl = () => {
-  
-  let user = sharp.player_1;
-  user > 0 || user <= 10 || user != 0;
-  alert('Ваше количество шариков ' + user + ' , у бота количество шариков ' + sharp.bot_1)
-  user = Number(prompt('Загадайте количество шариков от ' + 1 + ' до ' + user));
-  alert(`Ваше количество шариков ${user}`)
-  
+  alert('Ваше количество шариков ' + sharp.player_1 + ' , у бота количество шариков ' + sharp.bot_1)
+  if(user > 0 || user <= 10 || user != 0) {
+  user = Number(prompt('Загадайте количество шариков от ' + 1 + ' до ' + sharp.player_1)) 
+  user === sharp.player_1; 
+  alert(`Ваше количество шариков ${user}`);
+  }
+
   if(user < 1 || user > sharp.player_1 || user === 0 || user === NaN) {
     alert('Вы ввели некорректные данные, загадайте нужное количество шариков');
     return player_Marbl();
@@ -129,7 +133,6 @@ const player_Marbl = () => {
         }
   }
   bot_Marbl();
-  player_Marbl();
 };
 
 function bot_Marbl() {
@@ -146,7 +149,7 @@ console.log(b);
 
 let ch = 'четное';
 let nech = 'нечетное';
-alert('Ваше количество шариков ' + user + ' , у бота количество шариков ' + sharp.bot_1);
+alert('Ваше количество шариков ' + sharp.player_1 + ' , у бота количество шариков ' + sharp.bot_1);
 let player_12 = prompt('Какое число загадал бот? ' + ch + ' или ' + nech);
 if (ch != 'четное' || nech != 'нечетное') {
   alert('Введите корректное значение')
@@ -190,7 +193,6 @@ if ((player_12 === ch && bot_12 % 2 != 0) ||
   }
 }
 player_Marbl();
-bot_Marbl();
 };
 
 return ansver();
