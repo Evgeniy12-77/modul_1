@@ -149,12 +149,14 @@ console.log(b);
 
 let ch = 'четное';
 let nech = 'нечетное';
+let player_12;
 alert('Ваше количество шариков ' + sharp.player_1 + ' , у бота количество шариков ' + sharp.bot_1);
-let player_12 = prompt('Какое число загадал бот? ' + ch + ' или ' + nech);
-if (ch != 'четное' || nech != 'нечетное') {
+player_12 = prompt('Какое число загадал бот? ' + ch + ' или ' + nech); 
+if (!(player_12 === ch || player_12 === nech)) {
   alert('Введите корректное значение');
-  return;
+  return bot_Marbl();
 }
+
 if ((player_12 === ch && bot_12 % 2 === 0) || 
 (player_12 === nech && bot_12 % 2 != 0))  {
   sharp.player_1 = sharp.player_1 + bot_12, 
