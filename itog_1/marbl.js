@@ -71,14 +71,15 @@ const player_Marbl = () => {
   }
   if(user > 0 || user <= 10 || user != 0) {
   user = Number(prompt('Загадайте количество шариков от ' + 1 + ' до ' + sharp.player_1));
+    if(user < 1 || user > sharp.player_1 || user === 0 || isNaN(user)) {
+    alert('Вы ввели некорректные данные, загадайте нужное количество шариков');
+    return player_Marbl();
+    };
   user === sharp.player_1; 
   alert(`Ваше количество шариков ${user}`);
   }
 
-  if(user < 1 || user > sharp.player_1 || user === 0 || isNaN(user)) {
-    alert('Вы ввели некорректные данные, загадайте нужное количество шариков');
-    return player_Marbl();
-  };
+  
 
   console.log(user);
 
