@@ -58,6 +58,11 @@ const ansver = () => {
 
 let user;
 
+const sharp = {
+  player_1: 5,
+  bot_1: 5,
+  };
+
 const player_Marbl = () => {
   if(sharp.player_1 <= 0 || sharp.bot_1 <= 0) {
     sharp.player_1 = 5;
