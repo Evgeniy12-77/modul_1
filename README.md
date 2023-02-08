@@ -12,3 +12,6 @@ git status - # текущий статус
 git diff - # показывает все текущие изменения
 git diff --color-words # более развернуто
 git checckout . # вернуться к последнему коммиту
+
+$ git pull --rebase origin main
+git push origin main # СИНХРОНИЗАЦИЯ  с гитхабом
